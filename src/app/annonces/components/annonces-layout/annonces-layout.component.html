@@ -1,0 +1,13 @@
+<div class="annonces-container">
+  <h2>Annonces</h2>
+  <div *ngFor="let annonce of annonces" class="annonce-card">
+    <h3>{{ annonce.title }}</h3>
+    <p>{{ annonce.description }}</p>
+    <p>
+      <strong>Contact:</strong>
+      <a href="mailto:{{ annonce.mail }}">{{ annonce.mail }}</a>
+    </p>
+    <p><strong>Adresse:</strong> {{ annonce.address || "Non spécifiée" }}</p>
+    <p *ngIf="annonce.date"><strong>Date:</strong> {{ annonce.date | date }}</p>
+  </div>
+</div>
